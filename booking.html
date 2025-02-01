@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsHub - Booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <!-- Add other navigation items -->
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Book a Turf or Court</h1>
+        <div class="card">
+            <form id="bookingForm" class="booking-form">
+                <select id="sportType" required>
+                    <option value="">Select a sport</option>
+                    <option value="football">Football</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="tennis">Tennis</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <input type="date" id="bookingDate" required>
+                <input type="time" id="bookingTime" required>
+                <input type="number" id="duration" placeholder="Duration (hours)" required>
+                <button type="submit" class="btn">Book Now</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 SportsHub. All rights reserved.</p>
+    </footer>
+    <script src="booking.js"></script>
+</body>
+</html>
+

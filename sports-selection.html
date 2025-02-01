@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsHub - Choose Your Sports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+:root {
+  --primary-color: #00CF78;
+  --secondary-color: #4CAF50;
+  --background-color: black;
+  --text-color: #333;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url(images/Untitled\ design.png);
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Layout */
+#sportsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Individual Sport Card */
+.sport-item {
+  background: #1A1A1A;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.sport-item:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Selected effect */
+.sport-item.selected {
+  background-color: var(--secondary-color);
+  color: white;
+  box-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Sport Images */
+.sport-item img {
+  width: 100px;  /* Set fixed width */
+  height: 100px; /* Set fixed height */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Continue Button */
+#continueBtn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+#continueBtn:hover {
+  background: #0056b3;
+}
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Sports</h1>
+        <div id="sportsGrid" class="grid"></div>
+        <button id="continueBtn" class="btn">Continue</button>
+    </div>
+    <script src="sports-selection.js"></script>
+</body>
+</html>
+

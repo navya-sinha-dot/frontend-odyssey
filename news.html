@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports News Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            background-image: url("./Untitled\ design.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        .header {
+            background-color: #0d995f;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            background-color: #2d2d2d;
+            padding: 0.5rem;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover {
+            color: #e44d26;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .featured {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .news-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+            background: #2d2d2d;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .featured img {
+            height: 400px;
+        }
+
+        .news-content {
+            padding: 1rem;
+            background: #2d2d2d;
+        }
+
+        .news-category {
+            color: #e44d26;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .news-title {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .featured .news-title {
+            font-size: 1.5rem;
+        }
+
+        .news-excerpt {
+            color: #bbbbbb;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .section-title {
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        @media (max-width: 1024px) {
+            .news-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .featured {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured {
+                grid-column: span 1;
+            }
+            .featured img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Sports News</h1>
+    </header>
+    
+    <nav class="nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="competitions.html">Competitions</a></li>
+            <li><a href="academies.html">Academies</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="live-matches.html">Live Matches</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title">Top Stories</h2>
+        <div class="news-grid">
+            <!-- Featured Article -->
+            <article class="news-card featured">
+                <img src="./kns.jpg" alt="Featured sports news" style="height: 800">
+                <div class="news-content">
+                    <div class="news-category">NFL</div>
+                    <h2 class="news-title">Super Bowl LVIII: Chiefs vs 49ers Preview</h2>
+                    <p class="news-excerpt">An in-depth analysis of the upcoming Super Bowl matchup between Kansas City Chiefs and San Francisco 49ers, breaking down key matchups and strategic advantages.</p>
+                </div>
+            </article>
+
+            <!-- Regular Articles -->
+            <article class="news-card">
+                <img src="./lkrs.jpg" alt="NBA news">
+                <div class="news-content">
+                    <div class="news-category">NBA</div>
+                    <h3 class="news-title">Lakers Secure Victory in Overtime Thriller</h3>
+                    <p class="news-excerpt">LeBron James leads Lakers to victory with triple-double performance against rival Celtics.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="./yankees-reportedly-offer-gerrit-cole-record-setting-deal.jpg" alt="MLB news">
+                <div class="news-content">
+                    <div class="news-category">MLB</div>
+                    <h3 class="news-title">Yankees Sign Star Pitcher to Record Deal</h3>
+                    <p class="news-excerpt">New York Yankees make splash in free agency with major signing that could reshape the AL East.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="./ucl.jpg" alt="Soccer news">
+                <div class="news-content">
+                    <div class="news-category">Soccer</div>
+                    <h3 class="news-title">Champions League Quarter-Final Draw</h3>
+                    <p class="news-excerpt">Europe's elite teams learn their fate in knockout stages as tournament heats up.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="./oilers.jpg" alt="NHL news">
+                <div class="news-content">
+                    <div class="news-category">NHL</div>
+                    <h3 class="news-title">Oilers Extend Winning Streak to Ten Games</h3>
+                    <p class="news-excerpt">Edmonton continues impressive run with victory over Flames in Battle of Alberta.</p>
+                </div>
+            </article>
+        </div>
+
+        <h2 class="section-title">Latest News</h2>
+        <div class="news-grid">
+            <article class="news-card">
+                <img src="/api/placeholder/400/200" alt="Tennis news">
+                <div class="news-content">
+                    <div class="news-category">Tennis</div>
+                    <h3 class="news-title">Australian Open Final Set for Epic Showdown</h3>
+                    <p class="news-excerpt">Top seeds prepare for grand slam final in Melbourne after grueling semifinal matches.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/api/placeholder/400/200" alt="Golf news">
+                <div class="news-content">
+                    <div class="news-category">Golf</div>
+                    <h3 class="news-title">Masters Tournament Preparations Underway</h3>
+                    <p class="news-excerpt">Augusta National makes course changes ahead of prestigious major championship.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/api/placeholder/400/200" alt="MMA news">
+                <div class="news-content">
+                    <div class="news-category">MMA</div>
+                    <h3 class="news-title">UFC Announces Major Title Fight for Summer Event</h3>
+                    <p class="news-excerpt">Heavyweight championship bout set to headline upcoming pay-per-view card.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/api/placeholder/400/200" alt="NBA news">
+                <div class="news-content">
+                    <div class="news-category">NBA</div>
+                    <h3 class="news-title">All-Star Game Starters Revealed</h3>
+                    <p class="news-excerpt">Fan voting results determine starting lineups for upcoming NBA All-Star Game.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/api/placeholder/400/200" alt="Soccer news">
+                <div class="news-content">
+                    <div class="news-category">Soccer</div>
+                    <h3 class="news-title">Premier League Transfer Window Updates</h3>
+                    <p class="news-excerpt">Latest moves and rumors as clubs rush to strengthen their squads.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/api/placeholder/400/200" alt="NFL news">
+                <div class="news-content">
+                    <div class="news-category">NFL</div>
+                    <h3 class="news-title">Pro Bowl Skills Competition Results</h3>
+                    <p class="news-excerpt">NFL stars showcase talents in revamped Pro Bowl Games format.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/api/placeholder/400/200" alt="MLB news">
+                <div class="news-content">
+                    <div class="news-category">MLB</div>
+                    <h3 class="news-title">Spring Training Facilities Open Their Doors</h3>
+                    <p class="news-excerpt">Teams begin preparations for upcoming baseball season in Florida and Arizona.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/api/placeholder/400/200" alt="NHL news">
+                <div class="news-content">
+                    <div class="news-category">NHL</div>
+                    <h3 class="news-title">Trade Deadline Approaches</h3>
+                    <p class="news-excerpt">Teams position themselves for playoff push as trade deadline nears.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+</html>

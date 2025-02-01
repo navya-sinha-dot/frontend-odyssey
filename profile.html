@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsHub - My Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="competitions.html">Competitions</a></li>
+                <li><a href="academies.html">Academies</a></li>
+                <li><a href="bookings.html">Bookings</a></li>
+                <li><a href="bookings.html">Live Matches</a></li>
+
+                <li><a href="bookings.html">Tickets </a></li>
+
+
+                
+                
+
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container profile-container">
+        <section class="profile-header">
+            <img src="./pfp.jpg" alt="Profile Picture" class="profile-pic">
+            <h1 id="userName">John Doe</h1>
+        </section>
+
+        <div class="profile-content">
+            <section class="profile-left">
+                <a href="tutorial.html" class="button-68">Track Your Progress</a>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h2>Friends</h2>
+                        <p style="color: white;" id="friendCount">150</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>Athletes</h2>
+                        <p style="color: white;" id="athleteCount">25</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>Sports</h2>
+                        <p style="color: white;" id="sportCount">5</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile-right">
+                <h2>Upcoming Events</h2>
+                <div id="calendar" class="calendar"></div>
+            </section>
+        </div>
+
+        <section class="profile-bottom">
+            <div class="card">
+                <h2>Your Bookings</h2>
+                <ul id="bookingsList"></ul>
+            </div>
+            <div class="card">
+                <h2>Scheduled Matches</h2>
+                <ul id="matchesList"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 AthletiX. All rights reserved.</p>
+    </footer>
+    <script src="profile.js"></script>
+</body>
+</html>

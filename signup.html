@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsHub - Sign Up</title>
+    <style>
+        /* Use the same styles as login.html */
+        body {
+            background-image: url(images/Untitled\ design.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00CF78;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        button {
+            background-color: #00CF78;
+            color: black;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 50%;
+        }
+
+        button:hover {
+            background-color: #067a49;
+        }
+
+        #toggle-link {
+            margin-top: 10px;
+        }
+
+        #toggle-link a {
+            color: #00CF78;
+            text-decoration: none;
+        }
+
+        #toggle-link a:hover {
+            text-decoration: underline;
+            color: #52efae;
+        }
+        .store-text{
+            color:black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AthletiX</h1>
+        <form id="signupForm">
+            <div class="form-group" id="name-group">
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group" id="name-group">
+                <input type="text" id="name" placeholder="Username" required>
+            </div>
+            <div class="form-group" id="name-group">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="age" placeholder="Age" required>
+            </div>
+            <button type="submit" id="submit-button">Sign Up</button>
+        </form>
+        <div class="footer">
+            
+            <p>
+                <button type="submit" id="submit-button"><a href="register-store.html" class="store-text">Register Your Store</a></button></p>
+                <p id="toggle-link">Already have an account? <a href="login.html" id="toggle-auth">Login</a></p>
+            
+        </div>
+    </div>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'sports-selection.html';
+        });
+    </script>
+</body>
+</html>
