@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
+            
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             height: 100vh;
             margin: 0;
             background: black;
-            background-image: url('images/badminton4.jpg');
+            background-image: url('./back.png');
             background-repeat:no-repeat;
             background-position: center;
             background-attachment: fixed;
@@ -22,11 +23,13 @@
 
         }
         .welcome-container {
-            background-color:#313230;
+
+            background-color:#1A1A1A;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px #313230a4;
             text-align: center;
+            margin-left: 50px;
         }
         .welcome-container h1 {
             color:#00CF78;
@@ -38,19 +41,18 @@
 
             
         }
-        .button{
-    display: flex;
-    justify-content: center;
-}
+
+
+/* CSS */
 .button-59 {
   align-items: center;
-  background-color: #00CF78;
-  border: 2px solid #00CF78;
+  background-color: #fff;
+  border: 2px solid #000;
   box-sizing: border-box;
-  color: #00CF78;
+  color: #000;
   cursor: pointer;
   display: inline-flex;
-  fill: #00CF78;
+  fill: #000;
   font-family: Inter,sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -67,25 +69,28 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-bottom: 20px;
 }
 
 .button-59:focus {
-  color:black;
+  color: #171e29;
 }
 
 .button-59:hover {
   border-color: #00CF78;
-  color: rgb(210, 247, 211);
-  fill: rgb(210, 247, 211);
-  background-color: #00CF78;
+  color: #00CF78;
+  fill: #17b875;
 }
 
 .button-59:active {
-    border-color: #00CF78;
-    color: rgb(210, 247, 211);
-    fill: rgb(210, 247, 211);
-    background-color: #00CF78;
+  border-color: #00CF78;
+  color: #00CF78;
+  fill: #17b875;
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 170px;
+  }
 }
     </style>
 </head>
@@ -93,8 +98,8 @@
     <div class="welcome-container">
         <h1>Welcome to Athletix!</h1>
         <div class="button">
-            <button class="button-59" role="button"><a href="signup.html" style="text-decoration:none">Sign up</button></a>
-          </div>
+            <button class="button-59" role="button"><a href="signup.html" style="text-decoration: none;">Sign Up</a></button>
+        </div>
 
             
         
