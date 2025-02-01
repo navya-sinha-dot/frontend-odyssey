@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports News Grid</title>
     <style>
+        :root {
+            --accent-color: #00CF78;
+        }
+
+        /* Existing styles */
         * {
             margin: 0;
             padding: 0;
@@ -22,41 +27,55 @@
             color: #ffffff;
         }
 
-        .header {
-            background-color: #0d995f;
-            color: white;
-            padding: 1rem;
-            position: sticky;
+        /* New Navbar Styles */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
         }
 
-        .nav {
-            background-color: #2d2d2d;
-            padding: 0.5rem;
-        }
-
-        .nav ul {
-            list-style: none;
+        .nav-left {
             display: flex;
             gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            align-items: center;
         }
 
-        .nav a {
+        .nav-left a {
             color: white;
             text-decoration: none;
-            transition: color 0.2s;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .nav a:hover {
-            color: #e44d26;
+        .nav-left a:hover {
+            color: var(--accent-color);
         }
 
+        .profile-btn {
+            background-color: var(--accent-color);
+            color: black;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .profile-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Rest of your existing styles */
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 80px auto 0; /* Added top margin to account for fixed navbar */
             padding: 1rem;
         }
 
@@ -101,7 +120,7 @@
         }
 
         .news-category {
-            color: #e44d26;
+            color: var(--accent-color);
             font-weight: bold;
             font-size: 0.8rem;
             text-transform: uppercase;
@@ -163,18 +182,18 @@
         <h1>Sports News</h1>
     </header>
     
-    <nav class="nav">
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="competitions.html">Competitions</a></li>
-            <li><a href="academies.html">Academies</a></li>
-            <li><a href="booking.html">Booking</a></li>
-            <li><a href="live-matches.html">Live Matches</a></li>
-            <li><a href="tickets.html">Tickets</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href="profile.html">My Profile</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" style="color: var(--accent-color); font-size: 1.5rem; font-weight: bold;">AthletiX</a>
+            <a href="news.html">News</a>
+            <a href="competitions.html">Competitions</a>
+            <a href="academies.html">Academies</a>
+            <a href="live-matches.html">Live Scores</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="booking.html">Bookings</a>
+            <a href="shop.html">Shop</a>
+        </div>
+        <a href="profile.html" class="profile-btn">My Profile</a>
     </nav>
 
     <main class="container">
