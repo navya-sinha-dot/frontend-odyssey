@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AthletiX - Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-color: #00CF78;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-left a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-left a:hover {
+            color: var(--accent-color);
+        }
+
+        .profile-btn {
+            background-color: var(--accent-color);
+            color: black;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .profile-btn:hover {
+            opacity: 0.9;
+        }
+
+        .community-header {
+            background-image: url('omar-ramadan-eEhOyEtBGMQ-unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .community-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .community-content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .forum-section {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .forum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .forum-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .forum-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .forum-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .forum-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            color: #888;
+        }
+
+        .event-section {
+            margin-top: 3rem;
+        }
+
+        .event-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .event-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-details {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            color: #888;
+        }
+
+        .join-btn {
+            background-color: var(--accent-color);
+            color: black;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .join-btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" style="color: var(--accent-color); font-size: 1.5rem; font-weight: bold;">AthletiX</a>
+            <a href="news.html">News</a>
+            <a href="competitions.html">Competitions</a>
+            <a href="academies.html">Academies</a>
+            <a href="live-matches.html">Live Scores</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="booking.html">Bookings</a>
+            <a href="shop.html">Shop</a>
+        </div>
+        <a href="profile.html" class="profile-btn">My Profile</a>
+    </nav>
+
+    <div class="community-header">
+        <div class="header-content">
+            <h1>Community Hub</h1>
+            <p>Connect with fellow sports enthusiasts</p>
+        </div>
+    </div>
+
+    <div class="community-content">
+        <div class="forum-section">
+            <h2>Popular Forums</h2>
+            <div class="forum-grid">
+                <div class="forum-card">
+                    <h3>Basketball Discussion</h3>
+                    <p>Discuss NBA, local leagues, and basketball strategies</p>
+                    <div class="forum-stats">
+                        <span>Topics: 234</span>
+                        <span>Members: 1.2K</span>
+                    </div>
+                </div>
+                <div class="forum-card">
+                    <h3>Football Talk</h3>
+                    <p>All things football - from amateur to professional leagues</p>
+                    <div class="forum-stats">
+                        <span>Topics: 456</span>
+                        <span>Members: 2.5K</span>
+                    </div>
+                </div>
+                <div class="forum-card">
+                    <h3>Training Tips</h3>
+                    <p>Share and learn training techniques and fitness advice</p>
+                    <div class="forum-stats">
+                        <span>Topics: 178</span>
+                        <span>Members: 890</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="event-section">
+            <h2>Upcoming Community Events</h2>
+            <div class="event-card">
+                <h3>Weekend Sports Meetup</h3>
+                <p>Join us for a casual sports gathering this weekend. All skill levels welcome!</p>
+                <div class="event-details">
+                    <span>📅 Saturday, 10:00 AM</span>
+                    <span>📍 Central Park</span>
+                </div>
+                <a href="#" class="join-btn">Join Event</a>
+            </div>
+
+            <div class="event-card">
+                <h3>Monthly Tournament</h3>
+                <p>Participate in our monthly multi-sport tournament with prizes and refreshments.</p>
+                <div class="event-details">
+                    <span>📅 Last Sunday of Month</span>
+                    <span>📍 Sports Complex</span>
+                </div>
+                <a href="#" class="join-btn">Register Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 AthletiX. All rights reserved.</p>
+    </footer>
+</body>
+</html>
