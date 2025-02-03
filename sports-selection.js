@@ -44,10 +44,9 @@ continueBtn.addEventListener("click", () => {
   }
 })
 
-window.addEventListener("click", () => {
+document.querySelector(".btn").addEventListener("click", () => {
   const selectedSports = localStorage.getItem("selectedSports")
   if (selectedSports) {
     window.location.href = "home.html"
   }
 })
-

@@ -1,454 +1,355 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportsHub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --accent-color: #00CF78;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.welcome-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #000;
-            color: white;
-            min-height: 100vh;
-        }
+.welcome-text p {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
 
-        .navbar {
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--accent-color);
-        }
+.section-container {
+    padding: 4rem 2rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 60vh;
+}
 
-        .nav-left {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+.section-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
 
-        .nav-left a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+.section-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .nav-left a:hover {
-            color: var(--accent-color);
-        }
+.section-title {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
 
-        .profile-btn {
-            background-color: var(--accent-color);
-            color: black;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: opacity 0.3s;
-        }
+.news-container {
+    padding: 4rem 2rem;
+    background-image: url('braden-collum-9HI8UJMSdZA-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
 
-        .profile-btn:hover {
-            opacity: 0.9;
-        }
+.news-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
 
-        .welcome-container {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-image: url('tim-gouw-VvQSzMJ_h0U-unsplash.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
+.news-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .welcome-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-        }
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
 
-        .welcome-container h1 {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-            color: white;
-        }
+.news-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+    transition: transform 0.3s ease;
+}
 
-        .welcome-text {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 800px;
-            padding: 0 2rem;
-        }
+.news-card:hover {
+    transform: translateY(-5px);
+}
 
-        .welcome-text p {
-            font-size: 1.5rem;
-            color: #f0f0f0;
-            line-height: 1.6;
-            margin-top: 1rem;
-        }
+.news-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
 
-        .section-container {
-            padding: 4rem 2rem;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            min-height: 60vh;
-        }
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
 
-        .section-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-        }
+.card {
+    background-color: rgb(0, 0, 0);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+    transition: transform 0.3s ease;
+}
 
-        .section-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.card:hover {
+    transform: translateY(-5px);
+}
 
-        .section-title {
-            color: var(--accent-color);
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
+.card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
 
-        .news-container {
-            padding: 4rem 2rem;
-            background-image: url('braden-collum-9HI8UJMSdZA-unsplash.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
+.card p {
+    color: #f0f0f0;
+    line-height: 1.6;
+}
 
-        .news-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-        }
+#competitions {
+    background-image: url('markus-spiske-WUehAgqO5hE-unsplash.jpg');
+}
 
-        .news-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+#academies {
+    background-image: url('adria-crehuet-cano-LIhB1_mAGhY-unsplash.jpg');
+}
 
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+#bookings {
+    background-image: url('duffy-brook-IwDTKKFmWAc-unsplash');
+}
 
-        .news-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid var(--accent-color);
-            transition: transform 0.3s ease;
-        }
+#live-matches {
+    background-image: url('OIP.jpg');
+}
 
-        .news-card:hover {
-            transform: translateY(-5px);
-        }
+#tickets {
+    background-image: url('aksh-yadav-bY4cqxp7vos-unsplash.jpg');
+}
 
-        .news-card h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
+#shop {
+    background-image: url('christiann-koepke-WiE01mC9AtY-unsplash.jpg');
+}
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: rgb(0, 0, 0);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid var(--accent-color);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .card p {
-            color: #f0f0f0;
-            line-height: 1.6;
-        }
-
-        #competitions {
-            background-image: url('markus-spiske-WUehAgqO5hE-unsplash.jpg');
-        }
-
-        #academies {
-            background-image: url('adria-crehuet-cano-LIhB1_mAGhY-unsplash.jpg');
-        }
-
-        #bookings {
-            background-image: url('duffy-brook-IwDTKKFmWAc-unsplash');
-        }
-
-        #live-matches {
-            background-image: url('OIP.jpg');
-        }
-
-        #tickets {
-            background-image: url('aksh-yadav-bY4cqxp7vos-unsplash.jpg');
-        }
-
-        #shop {
-            background-image: url('christiann-koepke-WiE01mC9AtY-unsplash.jpg');
-        }
-
-        #community {
-            background-image: url('omar-ramadan-eEhOyEtBGMQ-unsplash.jpg');
-        }
-        .btn1{
-            background-color: #00CF78;
-            color: black;
-            border: none;
-            padding: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-            width: 50%;  
-        }
-    </style>
+#community {
+    background-image: url('omar-ramadan-eEhOyEtBGMQ-unsplash.jpg');
+}
+.btn1{
+    background-color: #00CF78;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50%;  
+}
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-left">
-            <a href="#" style="color: var(--accent-color); font-size: 1.5rem; font-weight: bold;">AthletiX</a>
-            <a href="news.html">News</a>
-            <a href="competitions.html">Competitions</a>
-            <a href="academies.html">Academies</a>
-            <a href="live-matches.html">Live Scores</a>
-            <a href="tickets.html">Tickets</a>
-            <a href="booking.html">Bookings</a>
-            <a href="shop.html">Shop</a>
-            <a href="community.html">Community</a>
-        </div>
-        <a href="profile.html" class="profile-btn">My Profile</a>
-    </nav>
+<nav class="navbar">
+<div class="nav-left">
+    <a href="#" style="color: var(--accent-color); font-size: 1.5rem; font-weight: bold;">AthletiX</a>
+    <a href="news.html">News</a>
+    <a href="competitions.html">Competitions</a>
+    <a href="academies.html">Academies</a>
+    <a href="live-matches.html">Live Scores</a>
+    <a href="tickets.html">Tickets</a>
+    <a href="booking.html">Bookings</a>
+    <a href="shop.html">Shop</a>
+    <a href="community.html">Community</a>
+</div>
+<a href="profile.html" class="profile-btn">My Profile</a>
+</nav>
 
-    <div class="welcome-container">
-        <div class="welcome-text">
-            <h1>Welcome to AthletiX</h1>
-            <p>Your ultimate destination for live scores, breaking news, and in-depth coverage of all your favorite sports.</p>
+<div class="welcome-container">
+<div class="welcome-text">
+    <h1>Welcome to AthletiX</h1>
+    <p>Your ultimate destination for live scores, breaking news, and in-depth coverage of all your favorite sports.</p>
+</div>
+</div>
+
+<div class="news-container">
+<div class="news-content">
+    <h2 style="color: var(--accent-color); font-size: 2.5rem; margin-bottom: 1rem;">Latest Sports News</h2>
+    <div class="news-grid">
+        <div class="news-card">
+            <h3>Lakers Secure Victory in Overtime Thriller</h3>
+            <p>LeBron James leads Lakers to victory with triple-double performance against rival Celtics.</p>
+        </div>
+        <div class="news-card">
+            <h3>NBA Playoffs</h3>
+            <p>Coverage of the ongoing NBA playoff series and team performances.</p>
+        </div>
+        <div class="news-card">
+            <h3>Formula 1 Grand Prix</h3>
+            <p>Results and analysis from the latest Formula 1 race weekend.</p>
+        </div>
+        <a href="news.html" class="btn1">See More</a>
+    </div>
+</div>
+</div>
+
+<div id="competitions" class="section-container">
+<div class="section-content">
+    <h2 class="section-title">Competitions</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Local Leagues</h3>
+            <p>Join our local sports leagues and compete against the best teams in your area.</p>
+        </div>
+        <div class="card">
+            <h3>Tournaments</h3>
+            <p>Participate in weekend tournaments across multiple sports categories.</p>
+        </div>
+        <div class="card">
+            <h3>Championships</h3>
+            <p>Annual championships with prestigious awards and recognition.</p>
+        </div>
+        <a href="competitions.html" class="btn1">See More</a>
+    </div>
+</div>
+</div>
+
+<div id="academies" class="section-container">
+<div class="section-content">
+    <h2 class="section-title">Sports Academies</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Youth Training</h3>
+            <p>Professional training programs for young athletes aged 5-15.</p>
+        </div>
+        <div class="card">
+            <h3>Elite Programs</h3>
+            <p>Advanced training for competitive athletes and professionals.</p>
+        </div>
+        <div class="card">
+            <h3>Summer Camps</h3>
+            <p>Intensive training camps during summer holidays.</p>
+        </div>
+        <a href="academies.html" class="btn1">See More</a>
+    </div>
+</div>
+</div>
+
+<div id="bookings" class="section-container">
+<div class="section-content">
+    <h2 class="section-title">Facility Bookings</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Courts</h3>
+            <p>Book basketball, tennis, and badminton courts.</p>
+        </div>
+        <div class="card">
+            <h3>Fields</h3>
+            <p>Reserve football, cricket, and hockey fields.</p>
+        </div>
+        <div class="card">
+            <h3>Training Areas</h3>
+            <p>Schedule time in our training facilities and gym.</p>
         </div>
     </div>
+</div>
+</div>
 
-    <div class="news-container">
-        <div class="news-content">
-            <h2 style="color: var(--accent-color); font-size: 2.5rem; margin-bottom: 1rem;">Latest Sports News</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <h3>Lakers Secure Victory in Overtime Thriller</h3>
-                    <p>LeBron James leads Lakers to victory with triple-double performance against rival Celtics.</p>
-                </div>
-                <div class="news-card">
-                    <h3>NBA Playoffs</h3>
-                    <p>Coverage of the ongoing NBA playoff series and team performances.</p>
-                </div>
-                <div class="news-card">
-                    <h3>Formula 1 Grand Prix</h3>
-                    <p>Results and analysis from the latest Formula 1 race weekend.</p>
-                </div>
-                <a href="news.html" class="btn1">See More</a>
-            </div>
+<div id="live-matches" class="section-container">
+<div class="section-content">
+    <h2 class="section-title">Live Matches</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Today's Games</h3>
+            <p>Watch live streams of ongoing matches and games.</p>
+        </div>
+        <div class="card">
+            <h3>Upcoming Matches</h3>
+            <p>Schedule of upcoming games with live coverage.</p>
+        </div>
+        <div class="card">
+            <h3>Match Stats</h3>
+            <p>Real-time statistics and analysis of live games.</p>
         </div>
     </div>
+</div>
+</div>
 
-    <div id="competitions" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title">Competitions</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Local Leagues</h3>
-                    <p>Join our local sports leagues and compete against the best teams in your area.</p>
-                </div>
-                <div class="card">
-                    <h3>Tournaments</h3>
-                    <p>Participate in weekend tournaments across multiple sports categories.</p>
-                </div>
-                <div class="card">
-                    <h3>Championships</h3>
-                    <p>Annual championships with prestigious awards and recognition.</p>
-                </div>
-                <a href="competitions.html" class="btn1">See More</a>
-            </div>
+<div id="tickets" class="section-container">
+<div class="section-content">
+    <h2 class="section-title">Event Tickets</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Match Tickets</h3>
+            <p>Book tickets for upcoming sports events and matches.</p>
+        </div>
+        <div class="card">
+            <h3>Season Passes</h3>
+            <p>Get access to all games with our season pass options.</p>
+        </div>
+        <div class="card">
+            <h3>VIP Access</h3>
+            <p>Premium packages with exclusive amenities and seating.</p>
+        </div>
+        <a href="tickets.html" class="btn">Book Tickets</a>
+    </div>
+</div>
+</div>
+
+<div id="shop" class="section-container">
+<div class="section-content">
+    <h2 class="section-title">Sports Shop</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Equipment</h3>
+            <p>Professional sports equipment and accessories.</p>
+        </div>
+        <div class="card">
+            <h3>Apparel</h3>
+            <p>Sports clothing and team merchandise.</p>
+        </div>
+        <div class="card">
+            <h3>Memorabilia</h3>
+            <p>Collectibles and signed merchandise from sports stars.</p>
+        </div>
+        <a href="shop.html" class="btn1">See More</a>
+    </div>
+</div>
+</div>
+
+<div id="community" class="section-container">
+<div class="section-content">
+    <h2 class="section-title">Community</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Forums</h3>
+            <p>Join discussions with other sports enthusiasts.</p>
+        </div>
+        <div class="card">
+            <h3>Events</h3>
+            <p>Community meetups and social sporting events.</p>
+        </div>
+        <div class="card">
+            <h3>Support</h3>
+            <p>Help and guidance from our community moderators.</p>
         </div>
     </div>
-
-    <div id="academies" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title">Sports Academies</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Youth Training</h3>
-                    <p>Professional training programs for young athletes aged 5-15.</p>
-                </div>
-                <div class="card">
-                    <h3>Elite Programs</h3>
-                    <p>Advanced training for competitive athletes and professionals.</p>
-                </div>
-                <div class="card">
-                    <h3>Summer Camps</h3>
-                    <p>Intensive training camps during summer holidays.</p>
-                </div>
-                <a href="academies.html" class="btn1">See More</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="bookings" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title">Facility Bookings</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Courts</h3>
-                    <p>Book basketball, tennis, and badminton courts.</p>
-                </div>
-                <div class="card">
-                    <h3>Fields</h3>
-                    <p>Reserve football, cricket, and hockey fields.</p>
-                </div>
-                <div class="card">
-                    <h3>Training Areas</h3>
-                    <p>Schedule time in our training facilities and gym.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="live-matches" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title">Live Matches</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Today's Games</h3>
-                    <p>Watch live streams of ongoing matches and games.</p>
-                </div>
-                <div class="card">
-                    <h3>Upcoming Matches</h3>
-                    <p>Schedule of upcoming games with live coverage.</p>
-                </div>
-                <div class="card">
-                    <h3>Match Stats</h3>
-                    <p>Real-time statistics and analysis of live games.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="tickets" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title">Event Tickets</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Match Tickets</h3>
-                    <p>Book tickets for upcoming sports events and matches.</p>
-                </div>
-                <div class="card">
-                    <h3>Season Passes</h3>
-                    <p>Get access to all games with our season pass options.</p>
-                </div>
-                <div class="card">
-                    <h3>VIP Access</h3>
-                    <p>Premium packages with exclusive amenities and seating.</p>
-                </div>
-                <a href="tickets.html" class="btn">Book Tickets</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="shop" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title">Sports Shop</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Equipment</h3>
-                    <p>Professional sports equipment and accessories.</p>
-                </div>
-                <div class="card">
-                    <h3>Apparel</h3>
-                    <p>Sports clothing and team merchandise.</p>
-                </div>
-                <div class="card">
-                    <h3>Memorabilia</h3>
-                    <p>Collectibles and signed merchandise from sports stars.</p>
-                </div>
-                <a href="shop.html" class="btn1">See More</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="community" class="section-container">
-        <div class="section-content">
-            <h2 class="section-title">Community</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Forums</h3>
-                    <p>Join discussions with other sports enthusiasts.</p>
-                </div>
-                <div class="card">
-                    <h3>Events</h3>
-                    <p>Community meetups and social sporting events.</p>
-                </div>
-                <div class="card">
-                    <h3>Support</h3>
-                    <p>Help and guidance from our community moderators.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2023 SportsHub. All rights reserved.</p>
-    </footer>
-    <script src="home.js"></script>
+</div>
+</div>
+<footer>
+<p>&copy; 2023 AthletiX. All rights reserved.</p>
+</footer>
+<script src="home.js"></script>
 </body>
 </html>
