@@ -1,4 +1,4 @@
-document.getElementById("bookingForm").addEventListener("submit", (e) => {
+document.getElementById("bookForm").addEventListener("submit", (e) => {
   e.preventDefault()
   const sport = document.getElementById("sportType").value
   const date = document.getElementById("bookingDate").value
